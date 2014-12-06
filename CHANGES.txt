@@ -1,3 +1,11 @@
+2012-01-18
+----------
+-Changed binary version to compile against QV11 API.
+-Note that QMC in QV11 IR is lacking some functionalty with DMS users.
+-Note that preloading has changed in QV11 and is not fully supported in this version.
+-Changed default server address to localhost.
+-Added support for commenting usernames out with a # character.
+
 2011-11-01
 ----------
 -Changed PowerShell script example for reading from Active Directory to be more flexible and straight forward.

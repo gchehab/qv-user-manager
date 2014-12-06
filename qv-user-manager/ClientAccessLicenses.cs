@@ -25,7 +25,8 @@ THE SOFTWARE.
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using qv_user_manager.QMSBackendService;
+using qv_user_manager.QMSAPI;
+using Exception = System.Exception;
 
 namespace qv_user_manager
 {
@@ -41,7 +42,7 @@ namespace qv_user_manager
             try
             {
                 // Initiate backend client
-                var backendClient = new QMSBackendClient();
+                var backendClient = new QMSClient();
 
                 // Get a time limited service key
                 ServiceKeyClientMessageInspector.ServiceKey = backendClient.GetTimeLimitedServiceKey();
@@ -146,7 +147,7 @@ namespace qv_user_manager
             try
             {
                 // Initiate backend client
-                var backendClient = new QMSBackendClient();
+                var backendClient = new QMSClient();
 
                 // Get a time limited service key
                 ServiceKeyClientMessageInspector.ServiceKey = backendClient.GetTimeLimitedServiceKey();
@@ -191,7 +192,7 @@ namespace qv_user_manager
             try
             {
                 // Initiate backend client
-                var backendClient = new QMSBackendClient();
+                var backendClient = new QMSClient();
 
                 // Get a time limited service key
                 ServiceKeyClientMessageInspector.ServiceKey = backendClient.GetTimeLimitedServiceKey();
@@ -276,7 +277,7 @@ namespace qv_user_manager
             try
             {
                 // Initiate backend client
-                var backendClient = new QMSBackendClient();
+                var backendClient = new QMSClient();
 
                 // Get a time limited service key
                 ServiceKeyClientMessageInspector.ServiceKey = backendClient.GetTimeLimitedServiceKey();

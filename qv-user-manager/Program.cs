@@ -24,9 +24,7 @@ THE SOFTWARE.
 
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
-using System.ServiceModel.Configuration;
 using NDesk.Options;
 
 namespace qv_user_manager
@@ -41,12 +39,6 @@ namespace qv_user_manager
 
         static void Main(string[] args)
         {
-            if (!VerifyServerConfig())
-            {
-                Environment.ExitCode = (int)ExitCode.Error;
-                return;
-            }
-
             var list = "";
             var add = "";
             var remove = "";
@@ -83,7 +75,7 @@ namespace qv_user_manager
 
                 if (version)
                 {
-                    Console.WriteLine("qv-user-manager 20111028\n");
+                    Console.WriteLine("qv-user-manager 20120118\n");
                     Console.WriteLine("This program comes with ABSOLUTELY NO WARRANTY.");
                     Console.WriteLine("This is free software, and you are welcome to redistribute it");
                     Console.WriteLine("under certain conditions.\n");
@@ -117,7 +109,8 @@ namespace qv_user_manager
                 string s;
                 while ((s = Console.ReadLine()) != null)
                 {
-                    users.Add(prefix + s.Trim());
+                    if (!s.StartsWith("#"))
+                        users.Add(prefix + s.Trim());
                 }
             }
 
@@ -161,41 +154,6 @@ namespace qv_user_manager
             }
 
             Environment.ExitCode = (int)ExitCode.Success;
-        }
-
-        /// <summary>
-        /// Verify that the user has changed the server settings
-        /// </summary>
-        /// <returns></returns>
-        private static bool VerifyServerConfig()
-        {
-            try
-            {
-                var clientSection = ConfigurationManager.GetSection("system.serviceModel/client") as ClientSection;
-
-                var propertyInformation = clientSection.ElementInformation.Properties[string.Empty];
-
-                var endpointCollection = propertyInformation.Value as ChannelEndpointElementCollection;
-
-                var address = endpointCollection[0].Address.ToString();
-
-                if (address.Contains("your-server-address"))
-                {
-                    Console.WriteLine("The server address needs to be configured in the qv-user-manager.config file." + System.Environment.NewLine);
-                    
-                    Console.WriteLine("Current value: " + address);
-
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-
-                return false;
-            }
-
-            return true;
         }
     }
 }

@@ -25,7 +25,8 @@ THE SOFTWARE.
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using qv_user_manager.QMSBackendService;
+using qv_user_manager.QMSAPI;
+using Exception = System.Exception;
 
 namespace qv_user_manager
 {
@@ -41,11 +42,11 @@ namespace qv_user_manager
             try
             {
                 // Initiate backend client
-                var backendClient = new QMSBackendClient();
+                var backendClient = new QMSClient();
 
                 // Get a time limited service key
                 ServiceKeyClientMessageInspector.ServiceKey = backendClient.GetTimeLimitedServiceKey();
-
+                
                 // Get available QlikView Servers
                 var serviceList = backendClient.GetServices(ServiceTypes.QlikViewServer);
 
@@ -94,7 +95,7 @@ namespace qv_user_manager
                     }
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -109,7 +110,7 @@ namespace qv_user_manager
             try
             {
                 // Initiate backend client
-                var backendClient = new QMSBackendClient();
+                var backendClient = new QMSClient();
 
                 // Get a time limited service key
                 ServiceKeyClientMessageInspector.ServiceKey = backendClient.GetTimeLimitedServiceKey();
@@ -154,7 +155,7 @@ namespace qv_user_manager
             try
             {
                 // Initiate backend client
-                var backendClient = new QMSBackendClient();
+                var backendClient = new QMSClient();
 
                 // Get a time limited service key
                 ServiceKeyClientMessageInspector.ServiceKey = backendClient.GetTimeLimitedServiceKey();
@@ -217,7 +218,7 @@ namespace qv_user_manager
             try
             {
                 // Initiate backend client
-                var backendClient = new QMSBackendClient();
+                var backendClient = new QMSClient();
 
                 // Get a time limited service key
                 ServiceKeyClientMessageInspector.ServiceKey = backendClient.GetTimeLimitedServiceKey();
@@ -225,7 +226,7 @@ namespace qv_user_manager
                 // Get available QlikView Servers
                 var serviceList = backendClient.GetServices(ServiceTypes.QlikViewServer);
 
-                Console.WriteLine("Document;Server;Preloaded;LoadedDays;LoadedBetween;Plugin;Mobile;AjaxZfc;Download;Category;SourceDocument");
+                Console.WriteLine("Document;Server;Preloaded;Plugin;Mobile;AjaxZfc;Download;Category;SourceDocument");
 
                 // Loop through available servers
                 foreach (var server in serviceList)
@@ -242,14 +243,16 @@ namespace qv_user_manager
                         var metaData = backendClient.GetDocumentMetaData(docNode, DocumentMetaDataScope.All);
 
                         // Check if PreloadMode is Restricted, if so get the dates
-                        var preloadMode = metaData.Server.Preload.Mode.ToString();
-                        var loadedDays = "";
-                        var between = "";
-                        if (preloadMode == "Restricted")
-                        {
-                            loadedDays = metaData.Server.Preload.DaysOfWeek.Aggregate(loadedDays, (current, dayOfWeek) => current + (dayOfWeek.ToString().Substring(0, 2) + " ")).Trim();
-                            between = metaData.Server.Preload.StartTime.ToShortTimeString() + "-" + metaData.Server.Preload.EndTime.ToShortTimeString();
-                        }
+                        var preloadMode = metaData.Server.DocumentLoad[0].Mode;
+                        
+                        //var preloadMode = metaData.Server.Preload.Mode.ToString();
+                        //var loadedDays = "";
+                        //var between = "";
+                        //if (preloadMode == "Restricted")
+                        //{
+                        //    loadedDays = metaData.Server.Preload.DaysOfWeek.Aggregate(loadedDays, (current, dayOfWeek) => current + (dayOfWeek.ToString().Substring(0, 2) + " ")).Trim();
+                        //    between = metaData.Server.Preload.StartTime.ToShortTimeString() + "-" + metaData.Server.Preload.EndTime.ToShortTimeString();
+                        //}
 
                         // Check which clients are enabled
                         var accessMethods = metaData.Server.Access.Methods.ToString();
@@ -263,8 +266,8 @@ namespace qv_user_manager
                         if (relativePath != "")
                             relativePath += "\\";
 
-                        Console.WriteLine(String.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10}", relativePath + docNode.Name,
-                                                        server.Name, preloadMode, loadedDays, between, pluginClient, mobileClient, ajaxClient, download, metaData.DocumentInfo.Category, metaData.DocumentInfo.SourceName));
+                        Console.WriteLine(String.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}", relativePath + docNode.Name,
+                                                        server.Name, preloadMode, pluginClient, mobileClient, ajaxClient, download, metaData.DocumentInfo.Category, metaData.DocumentInfo.SourceName));
                     }
                 }
             }
