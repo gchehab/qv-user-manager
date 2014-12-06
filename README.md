@@ -1,7 +1,7 @@
 About
 =====
 
-![Screenshot of example application](/braathen/qv-user-manager/raw/master/images/screenshot.png)
+![Screenshot of example application](https://raw.github.com/braathen/qv-user-manager/master/images/screenshot.png)
 
 qv-user-manager for QlikView 10 is able to automate the process of assigning and removing CALs and retrieve information such as when the CALs were last used in a CSV format, which is simple to read for QlikView. It can also populate DMS users and retrieve information in a similar CSV format. It automatically recognizes all available QlikView Servers and can work against the entire server(s) or specific document(s).
 
