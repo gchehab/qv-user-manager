@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://ws.qliktech.com/QMS/11/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://ws.qliktech.com/ANY/11/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QMSBackendService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://ws.qliktech.com/QMS/12/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://ws.qliktech.com/ANY/12/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QMSBackendService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="BasicHttpBinding_IQMS_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -14,14 +14,14 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="http://ws.qliktech.com/QMS/11/" location="http://sesth-rfn-win:4799/QMS/Service?wsdl=wsdl0" />
-  <wsdl:import namespace="http://ws.qliktech.com/ANY/11/" location="http://sesth-rfn-win:4799/QMS/Service?wsdl=wsdl1" />
+  <wsdl:import namespace="http://ws.qliktech.com/QMS/12/" location="http://sesth-rfn-win:4799/QMS/Service?wsdl=wsdl0" />
+  <wsdl:import namespace="http://ws.qliktech.com/ANY/12/" location="http://sesth-rfn-win:4799/QMS/Service?wsdl=wsdl1" />
   <wsdl:types />
   <wsdl:binding name="BasicHttpBinding_IQMS" type="i0:IQMS">
     <wsp:PolicyReference URI="#BasicHttpBinding_IQMS_policy" />
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="RestartQVS">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/RestartQVS" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/RestartQVS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -33,7 +33,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="QVSNeedRestart">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/QVSNeedRestart" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/QVSNeedRestart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -45,7 +45,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetDocumentMetaData">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentMetaData" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentMetaData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -57,7 +57,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SaveDocumentMetaData">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentMetaData" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentMetaData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -69,7 +69,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetCALConfiguration">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetCALConfiguration" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetCALConfiguration" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -81,7 +81,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SaveCALConfiguration">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SaveCALConfiguration" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SaveCALConfiguration" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -93,7 +93,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetCALInfoForUser">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetCALInfoForUser" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetCALInfoForUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -105,7 +105,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetQVSPerformanceData">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSPerformanceData" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSPerformanceData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -117,7 +117,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetQVSUtilizationData">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSUtilizationData" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSUtilizationData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -129,7 +129,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetQVSDocumentsPerUser">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsPerUser" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsPerUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -141,7 +141,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetQVSDocumentsAndUsers">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsAndUsers" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsAndUsers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -153,7 +153,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetServerObjectMetaDataForUser">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjectMetaDataForUser" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjectMetaDataForUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -165,7 +165,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetServerObjects">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjects" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjects" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -177,7 +177,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DeleteServerObject">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/DeleteServerObject" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/DeleteServerObject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -189,7 +189,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="TakeServerObject">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/TakeServerObject" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/TakeServerObject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -201,7 +201,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="LookupNames">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/LookupNames" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/LookupNames" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -213,7 +213,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetDSResources">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetDSResources" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetDSResources" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -225,7 +225,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ResolveUserGroups">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/ResolveUserGroups" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/ResolveUserGroups" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -237,7 +237,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetAvailableDSProviders">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDSProviders" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDSProviders" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -249,7 +249,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetAvailableDirectories">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDirectories" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDirectories" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -261,7 +261,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SetQVWSAuthentication">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SetQVWSAuthentication" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SetQVWSAuthentication" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -273,7 +273,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetQVWSAuthentication">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVWSAuthentication" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVWSAuthentication" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -285,7 +285,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SelectServer">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SelectServer" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SelectServer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -297,7 +297,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RemoteGetServices">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetServices" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetServices" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -309,7 +309,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RemoteGetSourceDocumentFolders">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentFolders" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentFolders" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -321,7 +321,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RemoteGetSourceDocumentNodes">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentNodes" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentNodes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -333,7 +333,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RemoteGetTaskListForDocID">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTaskListForDocID" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTaskListForDocID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -345,7 +345,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RemoteGetTasks">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTasks" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTasks" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -357,7 +357,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RemoteGetDocumentTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetDocumentTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetDocumentTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -369,7 +369,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ImportDocumentTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/ImportDocumentTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/ImportDocumentTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -381,7 +381,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ImportAllDocumentTasksForQds">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/ImportAllDocumentTasksForQds" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/ImportAllDocumentTasksForQds" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -393,7 +393,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="InitiateUploadExtensionObject">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/InitiateUploadExtensionObject" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/InitiateUploadExtensionObject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -405,7 +405,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="WriteExtensionObject">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/WriteExtensionObject" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/WriteExtensionObject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -417,7 +417,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="CloseAndInstallExtensionObject">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/CloseAndInstallExtensionObject" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/CloseAndInstallExtensionObject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -429,7 +429,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SaveLicense">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SaveLicense" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SaveLicense" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -441,7 +441,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetLicense">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetLicense" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetLicense" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -453,7 +453,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ClearLicense">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/ClearLicense" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/ClearLicense" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -465,7 +465,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="UpdateLicense">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/UpdateLicense" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/UpdateLicense" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -477,7 +477,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ValidateLicense">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/ValidateLicense" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/ValidateLicense" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -489,7 +489,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ServiceHasValidLicense">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/ServiceHasValidLicense" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/ServiceHasValidLicense" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -501,7 +501,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetQVSSettings">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSSettings" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSSettings" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -513,7 +513,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SaveQVSSettings">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SaveQVSSettings" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SaveQVSSettings" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -525,7 +525,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetServices">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetServices" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetServices" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -537,7 +537,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetReloadEngineServices">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetReloadEngineServices" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetReloadEngineServices" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -549,7 +549,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ClearQVSCache">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/ClearQVSCache" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/ClearQVSCache" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -561,7 +561,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetQDSSettings">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetQDSSettings" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetQDSSettings" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -573,7 +573,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SaveQDSSettings">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SaveQDSSettings" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SaveQDSSettings" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -585,7 +585,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SendDistributionServiceWorkorder">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SendDistributionServiceWorkorder" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SendDistributionServiceWorkorder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -597,7 +597,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="IsPublisherQDS">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/IsPublisherQDS" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/IsPublisherQDS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -609,7 +609,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetDocumentFolder">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentFolder" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentFolder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -621,7 +621,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetUserDocumentFolders">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentFolders" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentFolders" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -633,7 +633,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetSourceDocumentFolders">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentFolders" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentFolders" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -645,7 +645,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetSourceDocuments">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocuments" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocuments" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -657,7 +657,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetSourceDocumentNodes">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentNodes" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentNodes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -669,7 +669,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetUserDocuments">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocuments" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocuments" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -681,7 +681,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetUserDocumentNodes">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentNodes" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentNodes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -693,7 +693,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SaveDocumentTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -705,7 +705,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetTasks">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetTasks" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetTasks" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -717,7 +717,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -729,7 +729,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="FindTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/FindTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/FindTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -741,7 +741,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="FindEDX">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/FindEDX" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/FindEDX" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -753,7 +753,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetTasksForDocument">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetTasksForDocument" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetTasksForDocument" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -765,7 +765,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetDocumentTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -777,7 +777,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DeleteTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/DeleteTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/DeleteTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -789,7 +789,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RunTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/RunTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/RunTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -801,7 +801,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="AbortTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/AbortTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/AbortTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -813,7 +813,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetCategories">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetCategories" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetCategories" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -825,7 +825,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetAlertText">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetAlertText" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetAlertText" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -837,7 +837,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetServiceStatuses">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetServiceStatuses" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetServiceStatuses" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -849,7 +849,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Ping">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/Ping" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/Ping" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -861,7 +861,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetTaskStatusNodes">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusNodes" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusNodes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -873,7 +873,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetTaskStatuses">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatuses" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatuses" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -885,7 +885,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetTaskStatus">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatus" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -897,7 +897,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetTimeLimitedServiceKey">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetTimeLimitedServiceKey" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetTimeLimitedServiceKey" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -909,7 +909,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetSectionAccessTables">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTables" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTables" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -921,7 +921,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetSectionAccessTable">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTable" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTable" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -933,7 +933,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetSectionAccessTableByName">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTableByName" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTableByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -945,7 +945,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SaveSectionAccessTable">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/SaveSectionAccessTable" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/SaveSectionAccessTable" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -957,7 +957,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DeleteSectionAccessTable">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/DeleteSectionAccessTable" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/DeleteSectionAccessTable" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -969,7 +969,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="TriggerEDXTask">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/TriggerEDXTask" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/TriggerEDXTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -981,7 +981,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetEDXTaskStatus">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetEDXTaskStatus" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetEDXTaskStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -993,7 +993,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RestartQDS">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/RestartQDS" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/RestartQDS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1005,7 +1005,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="QDSNeedRestart">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/QDSNeedRestart" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/QDSNeedRestart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1017,7 +1017,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="CreateSession">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/CreateSession" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/CreateSession" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1029,7 +1029,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="CloseSession">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/CloseSession" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/CloseSession" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1041,7 +1041,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="AddSelections">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/AddSelections" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/AddSelections" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1053,7 +1053,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetFieldContentList">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetFieldContentList" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetFieldContentList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1065,7 +1065,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetFieldList">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetFieldList" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetFieldList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1077,7 +1077,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetDocumentBookmarkNames">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentBookmarkNames" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentBookmarkNames" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1089,7 +1089,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ClearSelections">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/ClearSelections" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/ClearSelections" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1101,7 +1101,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetReports">
-      <soap:operation soapAction="http://ws.qliktech.com/QMS/11/IQMS/GetReports" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/QMS/12/IQMS/GetReports" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1117,7 +1117,7 @@
     <wsp:PolicyReference URI="#BasicHttpBinding_IQTService_policy" />
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Ping">
-      <soap:operation soapAction="http://ws.qliktech.com/ANY/11/IQTService/Ping" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/ANY/12/IQTService/Ping" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1129,7 +1129,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetKey">
-      <soap:operation soapAction="http://ws.qliktech.com/ANY/11/IQTService/GetKey" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/ANY/12/IQTService/GetKey" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1141,7 +1141,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetTimeLimitedRequestKey">
-      <soap:operation soapAction="http://ws.qliktech.com/ANY/11/IQTService/GetTimeLimitedRequestKey" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/ANY/12/IQTService/GetTimeLimitedRequestKey" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1153,7 +1153,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetSystemInformation">
-      <soap:operation soapAction="http://ws.qliktech.com/ANY/11/IQTService/GetSystemInformation" style="document" />
+      <soap:operation soapAction="http://ws.qliktech.com/ANY/12/IQTService/GetSystemInformation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

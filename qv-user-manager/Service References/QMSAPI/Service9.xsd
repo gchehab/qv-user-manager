@@ -18,16 +18,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Trigger" nillable="true" type="tns:Trigger" />
-  <xs:complexType name="ScheduleTrigger">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Trigger">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="StartAt" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ScheduleTrigger" nillable="true" type="tns:ScheduleTrigger" />
   <xs:complexType name="MultipleEventTrigger">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Trigger">
@@ -39,6 +29,16 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="MultipleEventTrigger" nillable="true" type="tns:MultipleEventTrigger" />
+  <xs:complexType name="ScheduleTrigger">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Trigger">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StartAt" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScheduleTrigger" nillable="true" type="tns:ScheduleTrigger" />
   <xs:complexType name="RecurrenceTrigger">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ScheduleTrigger">

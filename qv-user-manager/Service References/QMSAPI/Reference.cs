@@ -5869,9 +5869,9 @@ namespace qv_user_manager.QMSAPI {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Trigger", Namespace="http://schemas.datacontract.org/2004/07/PIX.QMSAPI.DataObjects.Triggers")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(qv_user_manager.QMSAPI.MultipleEventTrigger))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(qv_user_manager.QMSAPI.ScheduleTrigger))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(qv_user_manager.QMSAPI.RecurrenceTrigger))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(qv_user_manager.QMSAPI.MultipleEventTrigger))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(qv_user_manager.QMSAPI.TaskEventTrigger))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(qv_user_manager.QMSAPI.ExternalEventTrigger))]
     public partial class Trigger : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -5943,6 +5943,45 @@ namespace qv_user_manager.QMSAPI {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MultipleEventTrigger", Namespace="http://schemas.datacontract.org/2004/07/PIX.QMSAPI.DataObjects.Triggers")]
+    [System.SerializableAttribute()]
+    public partial class MultipleEventTrigger : qv_user_manager.QMSAPI.Trigger {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<qv_user_manager.QMSAPI.Trigger> SubTriggersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeConstraintField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<qv_user_manager.QMSAPI.Trigger> SubTriggers {
+            get {
+                return this.SubTriggersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubTriggersField, value) != true)) {
+                    this.SubTriggersField = value;
+                    this.RaisePropertyChanged("SubTriggers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TimeConstraint {
+            get {
+                return this.TimeConstraintField;
+            }
+            set {
+                if ((this.TimeConstraintField.Equals(value) != true)) {
+                    this.TimeConstraintField = value;
+                    this.RaisePropertyChanged("TimeConstraint");
+                }
             }
         }
     }
@@ -6465,45 +6504,6 @@ namespace qv_user_manager.QMSAPI {
                 System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
                 if ((propertyChanged != null)) {
                     propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MultipleEventTrigger", Namespace="http://schemas.datacontract.org/2004/07/PIX.QMSAPI.DataObjects.Triggers")]
-    [System.SerializableAttribute()]
-    public partial class MultipleEventTrigger : qv_user_manager.QMSAPI.Trigger {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<qv_user_manager.QMSAPI.Trigger> SubTriggersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TimeConstraintField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<qv_user_manager.QMSAPI.Trigger> SubTriggers {
-            get {
-                return this.SubTriggersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubTriggersField, value) != true)) {
-                    this.SubTriggersField = value;
-                    this.RaisePropertyChanged("SubTriggers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TimeConstraint {
-            get {
-                return this.TimeConstraintField;
-            }
-            set {
-                if ((this.TimeConstraintField.Equals(value) != true)) {
-                    this.TimeConstraintField = value;
-                    this.RaisePropertyChanged("TimeConstraint");
                 }
             }
         }
@@ -12904,656 +12904,656 @@ namespace qv_user_manager.QMSAPI {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ws.qliktech.com/QMS/11/", ConfigurationName="QMSAPI.IQMS")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ws.qliktech.com/QMS/12/", ConfigurationName="QMSAPI.IQMS")]
     public interface IQMS {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RestartQVS", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RestartQVSResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/RestartQVSExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RestartQVS", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RestartQVSResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/RestartQVSExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void RestartQVS(System.Guid qvsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RestartQVS", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RestartQVSResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RestartQVS", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RestartQVSResponse")]
         System.Threading.Tasks.Task RestartQVSAsync(System.Guid qvsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/QVSNeedRestart", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/QVSNeedRestartResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/QVSNeedRestartExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/QVSNeedRestart", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/QVSNeedRestartResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/QVSNeedRestartExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.QVSNeedRestartResponse QVSNeedRestart(qv_user_manager.QMSAPI.QVSNeedRestartRequest request);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/QVSNeedRestart", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/QVSNeedRestartResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/QVSNeedRestart", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/QVSNeedRestartResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.QVSNeedRestartResponse> QVSNeedRestartAsync(qv_user_manager.QMSAPI.QVSNeedRestartRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentMetaData", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentMetaDataResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentMetaDataExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentMetaData", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentMetaDataResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentMetaDataExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.DocumentMetaData GetDocumentMetaData(qv_user_manager.QMSAPI.DocumentNode userDocument, qv_user_manager.QMSAPI.DocumentMetaDataScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentMetaData", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentMetaDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentMetaData", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentMetaDataResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.DocumentMetaData> GetDocumentMetaDataAsync(qv_user_manager.QMSAPI.DocumentNode userDocument, qv_user_manager.QMSAPI.DocumentMetaDataScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentMetaData", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentMetaDataResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentMetaDataExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentMetaData", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentMetaDataResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentMetaDataExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void SaveDocumentMetaData(qv_user_manager.QMSAPI.DocumentMetaData documentMetaData);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentMetaData", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentMetaDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentMetaData", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentMetaDataResponse")]
         System.Threading.Tasks.Task SaveDocumentMetaDataAsync(qv_user_manager.QMSAPI.DocumentMetaData documentMetaData);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetCALConfiguration", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetCALConfigurationResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetCALConfigurationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetCALConfiguration", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetCALConfigurationResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetCALConfigurationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.CALConfiguration GetCALConfiguration(System.Guid qvsID, qv_user_manager.QMSAPI.CALConfigurationScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetCALConfiguration", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetCALConfigurationResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetCALConfiguration", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetCALConfigurationResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.CALConfiguration> GetCALConfigurationAsync(System.Guid qvsID, qv_user_manager.QMSAPI.CALConfigurationScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveCALConfiguration", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveCALConfigurationResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SaveCALConfigurationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveCALConfiguration", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveCALConfigurationResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SaveCALConfigurationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void SaveCALConfiguration(qv_user_manager.QMSAPI.CALConfiguration calConfiguration);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveCALConfiguration", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveCALConfigurationResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveCALConfiguration", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveCALConfigurationResponse")]
         System.Threading.Tasks.Task SaveCALConfigurationAsync(qv_user_manager.QMSAPI.CALConfiguration calConfiguration);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetCALInfoForUser", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetCALInfoForUserResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetCALInfoForUserExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetCALInfoForUser", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetCALInfoForUserResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetCALInfoForUserExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.UserCALs GetCALInfoForUser(System.Guid qvsID, string user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetCALInfoForUser", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetCALInfoForUserResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetCALInfoForUser", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetCALInfoForUserResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.UserCALs> GetCALInfoForUserAsync(System.Guid qvsID, string user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSPerformanceData", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSPerformanceDataResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSPerformanceDataExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSPerformanceData", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSPerformanceDataResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSPerformanceDataExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.Dictionary<string, string> GetQVSPerformanceData(System.Guid qvsID, qv_user_manager.QMSAPI.QueryTarget target);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSPerformanceData", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSPerformanceDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSPerformanceData", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSPerformanceDataResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> GetQVSPerformanceDataAsync(System.Guid qvsID, qv_user_manager.QMSAPI.QueryTarget target);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSUtilizationData", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSUtilizationDataResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSUtilizationDataExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSUtilizationData", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSUtilizationDataResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSUtilizationDataExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.Dictionary<string, string> GetQVSUtilizationData(System.Guid qvsID, qv_user_manager.QMSAPI.QueryTarget target);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSUtilizationData", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSUtilizationDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSUtilizationData", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSUtilizationDataResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> GetQVSUtilizationDataAsync(System.Guid qvsID, qv_user_manager.QMSAPI.QueryTarget target);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsPerUser", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsPerUserResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsPerUserExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsPerUser", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsPerUserResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsPerUserExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.Dictionary<string, int> GetQVSDocumentsPerUser(System.Guid qvsID, qv_user_manager.QMSAPI.QueryTarget target);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsPerUser", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsPerUserResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsPerUser", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsPerUserResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, int>> GetQVSDocumentsPerUserAsync(System.Guid qvsID, qv_user_manager.QMSAPI.QueryTarget target);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsAndUsers", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsAndUsersResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsAndUsersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsAndUsers", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsAndUsersResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsAndUsersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> GetQVSDocumentsAndUsers(System.Guid qvsID, qv_user_manager.QMSAPI.QueryTarget target);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsAndUsers", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSDocumentsAndUsersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsAndUsers", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSDocumentsAndUsersResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>>> GetQVSDocumentsAndUsersAsync(System.Guid qvsID, qv_user_manager.QMSAPI.QueryTarget target);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjectMetaDataForUser", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjectMetaDataForUserResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjectMetaDataForUserExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjectMetaDataForUser", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjectMetaDataForUserResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjectMetaDataForUserExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.ServerObjectMetaData> GetServerObjectMetaDataForUser(System.Guid qvsID, string user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjectMetaDataForUser", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjectMetaDataForUserResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjectMetaDataForUser", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjectMetaDataForUserResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.ServerObjectMetaData>> GetServerObjectMetaDataForUserAsync(System.Guid qvsID, string user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjects", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjectsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjectsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjects", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjectsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjectsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.ServerObject> GetServerObjects(System.Guid qvsID, string documentName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjects", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetServerObjectsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjects", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetServerObjectsResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.ServerObject>> GetServerObjectsAsync(System.Guid qvsID, string documentName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/DeleteServerObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/DeleteServerObjectResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/DeleteServerObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/DeleteServerObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/DeleteServerObjectResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/DeleteServerObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void DeleteServerObject(System.Guid qvsID, string documentName, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/DeleteServerObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/DeleteServerObjectResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/DeleteServerObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/DeleteServerObjectResponse")]
         System.Threading.Tasks.Task DeleteServerObjectAsync(System.Guid qvsID, string documentName, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/TakeServerObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/TakeServerObjectResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/TakeServerObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/TakeServerObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/TakeServerObjectResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/TakeServerObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void TakeServerObject(System.Guid qvsID, string documentName, string id, string owner);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/TakeServerObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/TakeServerObjectResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/TakeServerObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/TakeServerObjectResponse")]
         System.Threading.Tasks.Task TakeServerObjectAsync(System.Guid qvsID, string documentName, string id, string owner);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/LookupNames", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/LookupNamesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/LookupNamesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/LookupNames", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/LookupNamesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/LookupNamesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DirectoryServiceObject> LookupNames(System.Guid dscID, System.Collections.Generic.List<string> names);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/LookupNames", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/LookupNamesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/LookupNames", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/LookupNamesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DirectoryServiceObject>> LookupNamesAsync(System.Guid dscID, System.Collections.Generic.List<string> names);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDSResources", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDSResourcesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetDSResourcesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDSResources", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDSResourcesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetDSResourcesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DSResource> GetDSResources(System.Guid dscID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDSResources", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDSResourcesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDSResources", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDSResourcesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DSResource>> GetDSResourcesAsync(System.Guid dscID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ResolveUserGroups", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ResolveUserGroupsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/ResolveUserGroupsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ResolveUserGroups", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ResolveUserGroupsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/ResolveUserGroupsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<string> ResolveUserGroups(System.Guid dscID, string user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ResolveUserGroups", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ResolveUserGroupsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ResolveUserGroups", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ResolveUserGroupsResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<string>> ResolveUserGroupsAsync(System.Guid dscID, string user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDSProviders", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDSProvidersResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDSProvidersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDSProviders", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDSProvidersResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDSProvidersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DSProvider> GetAvailableDSProviders(System.Guid dscID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDSProviders", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDSProvidersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDSProviders", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDSProvidersResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DSProvider>> GetAvailableDSProvidersAsync(System.Guid dscID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDirectories", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDirectoriesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDirectoriesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDirectories", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDirectoriesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDirectoriesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<string> GetAvailableDirectories(System.Guid dscID, string type);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDirectories", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetAvailableDirectoriesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDirectories", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetAvailableDirectoriesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetAvailableDirectoriesAsync(System.Guid dscID, string type);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SetQVWSAuthentication", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SetQVWSAuthenticationResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SetQVWSAuthenticationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SetQVWSAuthentication", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SetQVWSAuthenticationResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SetQVWSAuthenticationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void SetQVWSAuthentication(System.Guid qvwsID, qv_user_manager.QMSAPI.QVWSAuthentication authenticationType);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SetQVWSAuthentication", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SetQVWSAuthenticationResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SetQVWSAuthentication", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SetQVWSAuthenticationResponse")]
         System.Threading.Tasks.Task SetQVWSAuthenticationAsync(System.Guid qvwsID, qv_user_manager.QMSAPI.QVWSAuthentication authenticationType);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVWSAuthentication", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVWSAuthenticationResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVWSAuthenticationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVWSAuthentication", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVWSAuthenticationResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVWSAuthenticationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.QVWSAuthentication GetQVWSAuthentication(System.Guid qvwsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVWSAuthentication", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVWSAuthenticationResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVWSAuthentication", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVWSAuthenticationResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.QVWSAuthentication> GetQVWSAuthenticationAsync(System.Guid qvwsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SelectServer", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SelectServerResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SelectServerExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SelectServer", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SelectServerResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SelectServerExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Uri SelectServer(System.Guid qvwsID, string document);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SelectServer", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SelectServerResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SelectServer", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SelectServerResponse")]
         System.Threading.Tasks.Task<System.Uri> SelectServerAsync(System.Guid qvwsID, string document);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetServices", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetServicesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetServicesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetServices", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetServicesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetServicesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.ServiceInfo> RemoteGetServices(System.Guid remoteQmsId, qv_user_manager.QMSAPI.ServiceTypes serviceTypes);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetServices", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetServicesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetServices", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetServicesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.ServiceInfo>> RemoteGetServicesAsync(System.Guid remoteQmsId, qv_user_manager.QMSAPI.ServiceTypes serviceTypes);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentFoldersResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentFoldersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentFoldersResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentFoldersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentFolder> RemoteGetSourceDocumentFolders(System.Guid remoteQmsId, System.Guid remoteQdsId, qv_user_manager.QMSAPI.DocumentFolderScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentFoldersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentFoldersResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentFolder>> RemoteGetSourceDocumentFoldersAsync(System.Guid remoteQmsId, System.Guid remoteQdsId, qv_user_manager.QMSAPI.DocumentFolderScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentNodesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentNodesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentNodesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentNodesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode> RemoteGetSourceDocumentNodes(System.Guid remoteQmsId, System.Guid remoteQdsId, System.Guid folderId, string relativePath);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetSourceDocumentNodesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetSourceDocumentNodesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode>> RemoteGetSourceDocumentNodesAsync(System.Guid remoteQmsId, System.Guid remoteQdsId, System.Guid folderId, string relativePath);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTaskListForDocID", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTaskListForDocIDResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTaskListForDocIDExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTaskListForDocID", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTaskListForDocIDResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTaskListForDocIDExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo> RemoteGetTaskListForDocID(System.Guid remoteQmsId, System.Guid documentId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTaskListForDocID", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTaskListForDocIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTaskListForDocID", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTaskListForDocIDResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo>> RemoteGetTaskListForDocIDAsync(System.Guid remoteQmsId, System.Guid documentId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTasks", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTasksResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTasksExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTasks", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTasksResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTasksExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo> RemoteGetTasks(System.Guid remoteQmsId, System.Guid remoteQdsId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTasks", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetTasksResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTasks", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetTasksResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo>> RemoteGetTasksAsync(System.Guid remoteQmsId, System.Guid remoteQdsId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetDocumentTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetDocumentTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetDocumentTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetDocumentTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.DocumentTask RemoteGetDocumentTask(System.Guid remoteQmsId, System.Guid taskId, qv_user_manager.QMSAPI.DocumentTaskScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RemoteGetDocumentTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RemoteGetDocumentTaskResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.DocumentTask> RemoteGetDocumentTaskAsync(System.Guid remoteQmsId, System.Guid taskId, qv_user_manager.QMSAPI.DocumentTaskScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ImportDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ImportDocumentTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/ImportDocumentTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ImportDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ImportDocumentTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/ImportDocumentTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void ImportDocumentTask(System.Guid remoteQmsId, System.Guid remoteDocumentTaskId, System.Guid destinationQdsId, qv_user_manager.QMSAPI.DocumentNode destinationDocument);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ImportDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ImportDocumentTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ImportDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ImportDocumentTaskResponse")]
         System.Threading.Tasks.Task ImportDocumentTaskAsync(System.Guid remoteQmsId, System.Guid remoteDocumentTaskId, System.Guid destinationQdsId, qv_user_manager.QMSAPI.DocumentNode destinationDocument);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ImportAllDocumentTasksForQds", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ImportAllDocumentTasksForQdsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/ImportAllDocumentTasksForQdsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ImportAllDocumentTasksForQds", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ImportAllDocumentTasksForQdsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/ImportAllDocumentTasksForQdsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void ImportAllDocumentTasksForQds(System.Guid remoteQmsId, System.Guid remoteQdsId, System.Guid destinationQdsId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ImportAllDocumentTasksForQds", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ImportAllDocumentTasksForQdsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ImportAllDocumentTasksForQds", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ImportAllDocumentTasksForQdsResponse")]
         System.Threading.Tasks.Task ImportAllDocumentTasksForQdsAsync(System.Guid remoteQmsId, System.Guid remoteQdsId, System.Guid destinationQdsId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/InitiateUploadExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/InitiateUploadExtensionObjectResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/InitiateUploadExtensionObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/InitiateUploadExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/InitiateUploadExtensionObjectResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/InitiateUploadExtensionObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.ExtensionUploadHandle InitiateUploadExtensionObject(System.Guid qvsId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/InitiateUploadExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/InitiateUploadExtensionObjectResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/InitiateUploadExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/InitiateUploadExtensionObjectResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.ExtensionUploadHandle> InitiateUploadExtensionObjectAsync(System.Guid qvsId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/WriteExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/WriteExtensionObjectResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/WriteExtensionObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/WriteExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/WriteExtensionObjectResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/WriteExtensionObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.ExtensionUploadHandle WriteExtensionObject(qv_user_manager.QMSAPI.ExtensionUploadHandle handle, byte[] chunk);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/WriteExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/WriteExtensionObjectResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/WriteExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/WriteExtensionObjectResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.ExtensionUploadHandle> WriteExtensionObjectAsync(qv_user_manager.QMSAPI.ExtensionUploadHandle handle, byte[] chunk);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/CloseAndInstallExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/CloseAndInstallExtensionObjectResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/CloseAndInstallExtensionObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/CloseAndInstallExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/CloseAndInstallExtensionObjectResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/CloseAndInstallExtensionObjectExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.QVSMessage> CloseAndInstallExtensionObject(qv_user_manager.QMSAPI.ExtensionUploadHandle handle);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/CloseAndInstallExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/CloseAndInstallExtensionObjectResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/CloseAndInstallExtensionObject", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/CloseAndInstallExtensionObjectResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.QVSMessage>> CloseAndInstallExtensionObjectAsync(qv_user_manager.QMSAPI.ExtensionUploadHandle handle);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveLicenseResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SaveLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveLicenseResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SaveLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         string SaveLicense(qv_user_manager.QMSAPI.License license, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveLicenseResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveLicenseResponse")]
         System.Threading.Tasks.Task<string> SaveLicenseAsync(qv_user_manager.QMSAPI.License license, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetLicenseResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetLicenseResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.License GetLicense(qv_user_manager.QMSAPI.LicenseType licenseType, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetLicenseResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetLicenseResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.License> GetLicenseAsync(qv_user_manager.QMSAPI.LicenseType licenseType, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ClearLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ClearLicenseResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/ClearLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ClearLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ClearLicenseResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/ClearLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void ClearLicense(qv_user_manager.QMSAPI.LicenseType licenseType, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ClearLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ClearLicenseResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ClearLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ClearLicenseResponse")]
         System.Threading.Tasks.Task ClearLicenseAsync(qv_user_manager.QMSAPI.LicenseType licenseType, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/UpdateLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/UpdateLicenseResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/UpdateLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/UpdateLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/UpdateLicenseResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/UpdateLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void UpdateLicense(qv_user_manager.QMSAPI.LicenseType licenseType, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/UpdateLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/UpdateLicenseResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/UpdateLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/UpdateLicenseResponse")]
         System.Threading.Tasks.Task UpdateLicenseAsync(qv_user_manager.QMSAPI.LicenseType licenseType, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ValidateLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ValidateLicenseResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/ValidateLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ValidateLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ValidateLicenseResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/ValidateLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void ValidateLicense(qv_user_manager.QMSAPI.License license);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ValidateLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ValidateLicenseResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ValidateLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ValidateLicenseResponse")]
         System.Threading.Tasks.Task ValidateLicenseAsync(qv_user_manager.QMSAPI.License license);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ServiceHasValidLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ServiceHasValidLicenseResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/ServiceHasValidLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ServiceHasValidLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ServiceHasValidLicenseResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/ServiceHasValidLicenseExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         bool ServiceHasValidLicense(qv_user_manager.QMSAPI.LicenseType licenseType, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ServiceHasValidLicense", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ServiceHasValidLicenseResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ServiceHasValidLicense", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ServiceHasValidLicenseResponse")]
         System.Threading.Tasks.Task<bool> ServiceHasValidLicenseAsync(qv_user_manager.QMSAPI.LicenseType licenseType, System.Guid serviceID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSSettings", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSSettingsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSSettingsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSSettings", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSSettingsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSSettingsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.QVSSettings GetQVSSettings(System.Guid qvsID, qv_user_manager.QMSAPI.QVSSettingsScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQVSSettings", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQVSSettingsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQVSSettings", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQVSSettingsResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.QVSSettings> GetQVSSettingsAsync(System.Guid qvsID, qv_user_manager.QMSAPI.QVSSettingsScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveQVSSettings", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveQVSSettingsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SaveQVSSettingsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveQVSSettings", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveQVSSettingsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SaveQVSSettingsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void SaveQVSSettings(qv_user_manager.QMSAPI.QVSSettings qvsSettings);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveQVSSettings", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveQVSSettingsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveQVSSettings", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveQVSSettingsResponse")]
         System.Threading.Tasks.Task SaveQVSSettingsAsync(qv_user_manager.QMSAPI.QVSSettings qvsSettings);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetServices", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetServicesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetServicesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetServices", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetServicesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetServicesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.ServiceInfo> GetServices(qv_user_manager.QMSAPI.ServiceTypes serviceTypes);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetServices", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetServicesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetServices", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetServicesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.ServiceInfo>> GetServicesAsync(qv_user_manager.QMSAPI.ServiceTypes serviceTypes);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetReloadEngineServices", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetReloadEngineServicesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetReloadEngineServicesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetReloadEngineServices", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetReloadEngineServicesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetReloadEngineServicesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.ServiceInfo> GetReloadEngineServices();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetReloadEngineServices", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetReloadEngineServicesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetReloadEngineServices", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetReloadEngineServicesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.ServiceInfo>> GetReloadEngineServicesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ClearQVSCache", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ClearQVSCacheResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/ClearQVSCacheExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ClearQVSCache", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ClearQVSCacheResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/ClearQVSCacheExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void ClearQVSCache(qv_user_manager.QMSAPI.QVSCacheObjects objects);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ClearQVSCache", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ClearQVSCacheResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ClearQVSCache", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ClearQVSCacheResponse")]
         System.Threading.Tasks.Task ClearQVSCacheAsync(qv_user_manager.QMSAPI.QVSCacheObjects objects);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQDSSettings", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQDSSettingsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetQDSSettingsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQDSSettings", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQDSSettingsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetQDSSettingsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.QDSSettings GetQDSSettings(System.Guid qdsID, qv_user_manager.QMSAPI.QDSSettingsScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetQDSSettings", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetQDSSettingsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetQDSSettings", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetQDSSettingsResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.QDSSettings> GetQDSSettingsAsync(System.Guid qdsID, qv_user_manager.QMSAPI.QDSSettingsScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveQDSSettings", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveQDSSettingsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SaveQDSSettingsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveQDSSettings", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveQDSSettingsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SaveQDSSettingsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         string SaveQDSSettings(qv_user_manager.QMSAPI.QDSSettings qdsSettings);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveQDSSettings", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveQDSSettingsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveQDSSettings", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveQDSSettingsResponse")]
         System.Threading.Tasks.Task<string> SaveQDSSettingsAsync(qv_user_manager.QMSAPI.QDSSettings qdsSettings);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SendDistributionServiceWorkorder", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SendDistributionServiceWorkorderResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SendDistributionServiceWorkorderExceptionFault" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SendDistributionServiceWorkorder", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SendDistributionServiceWorkorderResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SendDistributionServiceWorkorderExceptionFault" +
             "", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void SendDistributionServiceWorkorder(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SendDistributionServiceWorkorder", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SendDistributionServiceWorkorderResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SendDistributionServiceWorkorder", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SendDistributionServiceWorkorderResponse")]
         System.Threading.Tasks.Task SendDistributionServiceWorkorderAsync(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/IsPublisherQDS", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/IsPublisherQDSResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/IsPublisherQDSExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/IsPublisherQDS", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/IsPublisherQDSResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/IsPublisherQDSExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         bool IsPublisherQDS(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/IsPublisherQDS", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/IsPublisherQDSResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/IsPublisherQDS", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/IsPublisherQDSResponse")]
         System.Threading.Tasks.Task<bool> IsPublisherQDSAsync(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentFolder", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentFolderResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentFolderExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentFolder", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentFolderResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentFolderExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.DocumentFolder GetDocumentFolder(System.Guid id, qv_user_manager.QMSAPI.DocumentFolderScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentFolder", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentFolderResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentFolder", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentFolderResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.DocumentFolder> GetDocumentFolderAsync(System.Guid id, qv_user_manager.QMSAPI.DocumentFolderScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentFoldersResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentFoldersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentFoldersResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentFoldersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentFolder> GetUserDocumentFolders(System.Guid qvsID, qv_user_manager.QMSAPI.DocumentFolderScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentFoldersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentFoldersResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentFolder>> GetUserDocumentFoldersAsync(System.Guid qvsID, qv_user_manager.QMSAPI.DocumentFolderScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentFoldersResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentFoldersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentFoldersResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentFoldersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentFolder> GetSourceDocumentFolders(System.Guid qdsID, qv_user_manager.QMSAPI.DocumentFolderScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentFoldersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentFolders", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentFoldersResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentFolder>> GetSourceDocumentFoldersAsync(System.Guid qdsID, qv_user_manager.QMSAPI.DocumentFolderScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocuments", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocuments", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode> GetSourceDocuments(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocuments", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocuments", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentsResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode>> GetSourceDocumentsAsync(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentNodesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentNodesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentNodesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentNodesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode> GetSourceDocumentNodes(System.Guid qdsID, System.Guid folderID, string relativePath);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSourceDocumentNodesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSourceDocumentNodesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode>> GetSourceDocumentNodesAsync(System.Guid qdsID, System.Guid folderID, string relativePath);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocuments", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocuments", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode> GetUserDocuments(System.Guid qvsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocuments", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocuments", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentsResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode>> GetUserDocumentsAsync(System.Guid qvsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentNodesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentNodesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentNodesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentNodesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode> GetUserDocumentNodes(System.Guid qvsID, System.Guid folderID, string relativePath);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetUserDocumentNodesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentNodes", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetUserDocumentNodesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.DocumentNode>> GetUserDocumentNodesAsync(System.Guid qvsID, System.Guid folderID, string relativePath);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void SaveDocumentTask(qv_user_manager.QMSAPI.DocumentTask documentTask);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveDocumentTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveDocumentTaskResponse")]
         System.Threading.Tasks.Task SaveDocumentTaskAsync(qv_user_manager.QMSAPI.DocumentTask documentTask);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTasks", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTasksResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetTasksExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTasks", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTasksResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetTasksExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo> GetTasks(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTasks", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTasksResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTasks", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTasksResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo>> GetTasksAsync(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.TaskInfo GetTask(System.Guid taskID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.TaskInfo> GetTaskAsync(System.Guid taskID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/FindTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/FindTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/FindTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/FindTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/FindTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/FindTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.TaskInfo FindTask(System.Guid qdsId, qv_user_manager.QMSAPI.TaskType taskType, string name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/FindTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/FindTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/FindTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/FindTaskResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.TaskInfo> FindTaskAsync(System.Guid qdsId, qv_user_manager.QMSAPI.TaskType taskType, string name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/FindEDX", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/FindEDXResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/FindEDXExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/FindEDX", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/FindEDXResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/FindEDXExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo> FindEDX(string name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/FindEDX", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/FindEDXResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/FindEDX", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/FindEDXResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo>> FindEDXAsync(string name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTasksForDocument", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTasksForDocumentResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetTasksForDocumentExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTasksForDocument", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTasksForDocumentResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetTasksForDocumentExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo> GetTasksForDocument(System.Guid documentID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTasksForDocument", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTasksForDocumentResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTasksForDocument", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTasksForDocumentResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskInfo>> GetTasksForDocumentAsync(System.Guid documentID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.DocumentTask GetDocumentTask(System.Guid documentTaskID, qv_user_manager.QMSAPI.DocumentTaskScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentTaskResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.DocumentTask> GetDocumentTaskAsync(System.Guid documentTaskID, qv_user_manager.QMSAPI.DocumentTaskScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/DeleteTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/DeleteTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/DeleteTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/DeleteTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/DeleteTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/DeleteTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         bool DeleteTask(System.Guid taskID, qv_user_manager.QMSAPI.TaskType taskType);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/DeleteTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/DeleteTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/DeleteTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/DeleteTaskResponse")]
         System.Threading.Tasks.Task<bool> DeleteTaskAsync(System.Guid taskID, qv_user_manager.QMSAPI.TaskType taskType);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RunTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RunTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/RunTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RunTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RunTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/RunTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void RunTask(System.Guid taskID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RunTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RunTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RunTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RunTaskResponse")]
         System.Threading.Tasks.Task RunTaskAsync(System.Guid taskID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/AbortTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/AbortTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/AbortTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/AbortTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/AbortTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/AbortTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void AbortTask(System.Guid taskID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/AbortTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/AbortTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/AbortTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/AbortTaskResponse")]
         System.Threading.Tasks.Task AbortTaskAsync(System.Guid taskID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetCategories", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetCategoriesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetCategoriesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetCategories", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetCategoriesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetCategoriesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.Category> GetCategories(qv_user_manager.QMSAPI.CategoriesScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetCategories", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetCategoriesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetCategories", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetCategoriesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.Category>> GetCategoriesAsync(qv_user_manager.QMSAPI.CategoriesScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetAlertText", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetAlertTextResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetAlertTextExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetAlertText", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetAlertTextResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetAlertTextExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         string GetAlertText();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetAlertText", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetAlertTextResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetAlertText", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetAlertTextResponse")]
         System.Threading.Tasks.Task<string> GetAlertTextAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetServiceStatuses", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetServiceStatusesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetServiceStatusesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetServiceStatuses", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetServiceStatusesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetServiceStatusesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.ServiceStatus> GetServiceStatuses(System.Collections.Generic.List<System.Guid> serviceIDs);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetServiceStatuses", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetServiceStatusesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetServiceStatuses", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetServiceStatusesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.ServiceStatus>> GetServiceStatusesAsync(System.Collections.Generic.List<System.Guid> serviceIDs);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/Ping", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/PingResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/PingExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/Ping", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/PingResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/PingExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void Ping();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/Ping", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/PingResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/Ping", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/PingResponse")]
         System.Threading.Tasks.Task PingAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusNodes", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusNodesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusNodesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusNodes", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusNodesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusNodesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskStatusNode> GetTaskStatusNodes(System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskStatusNodeRequest> taskStatusNodeRequests, qv_user_manager.QMSAPI.TaskStatusFilter filter, qv_user_manager.QMSAPI.TaskStatusScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusNodes", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusNodesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusNodes", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusNodesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskStatusNode>> GetTaskStatusNodesAsync(System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskStatusNodeRequest> taskStatusNodeRequests, qv_user_manager.QMSAPI.TaskStatusFilter filter, qv_user_manager.QMSAPI.TaskStatusScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatuses", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatuses", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskStatus> GetTaskStatuses(qv_user_manager.QMSAPI.TaskStatusFilter filter, qv_user_manager.QMSAPI.TaskStatusScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatuses", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatuses", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.TaskStatus>> GetTaskStatusesAsync(qv_user_manager.QMSAPI.TaskStatusFilter filter, qv_user_manager.QMSAPI.TaskStatusScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatus", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatus", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.TaskStatus GetTaskStatus(System.Guid taskID, qv_user_manager.QMSAPI.TaskStatusScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatus", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTaskStatusResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatus", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTaskStatusResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.TaskStatus> GetTaskStatusAsync(System.Guid taskID, qv_user_manager.QMSAPI.TaskStatusScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTimeLimitedServiceKey", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTimeLimitedServiceKeyResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetTimeLimitedServiceKeyExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTimeLimitedServiceKey", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTimeLimitedServiceKeyResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetTimeLimitedServiceKeyExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         string GetTimeLimitedServiceKey();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetTimeLimitedServiceKey", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetTimeLimitedServiceKeyResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetTimeLimitedServiceKey", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetTimeLimitedServiceKeyResponse")]
         System.Threading.Tasks.Task<string> GetTimeLimitedServiceKeyAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTables", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTablesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTablesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTables", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTablesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTablesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.SectionAccessTable> GetSectionAccessTables(qv_user_manager.QMSAPI.SectionAccessScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTables", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTablesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTables", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTablesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.SectionAccessTable>> GetSectionAccessTablesAsync(qv_user_manager.QMSAPI.SectionAccessScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTableResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTableExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTableResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTableExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.SectionAccessTable GetSectionAccessTable(System.Guid tableId, qv_user_manager.QMSAPI.SectionAccessScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTableResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTableResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.SectionAccessTable> GetSectionAccessTableAsync(System.Guid tableId, qv_user_manager.QMSAPI.SectionAccessScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTableByName", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTableByNameResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTableByNameExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTableByName", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTableByNameResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTableByNameExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.SectionAccessTable GetSectionAccessTableByName(string tableName, qv_user_manager.QMSAPI.SectionAccessScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTableByName", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetSectionAccessTableByNameResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTableByName", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetSectionAccessTableByNameResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.SectionAccessTable> GetSectionAccessTableByNameAsync(string tableName, qv_user_manager.QMSAPI.SectionAccessScope scope);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveSectionAccessTableResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/SaveSectionAccessTableExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveSectionAccessTableResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/SaveSectionAccessTableExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void SaveSectionAccessTable(qv_user_manager.QMSAPI.SectionAccessTable table);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/SaveSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/SaveSectionAccessTableResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/SaveSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/SaveSectionAccessTableResponse")]
         System.Threading.Tasks.Task SaveSectionAccessTableAsync(qv_user_manager.QMSAPI.SectionAccessTable table);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/DeleteSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/DeleteSectionAccessTableResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/DeleteSectionAccessTableExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/DeleteSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/DeleteSectionAccessTableResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/DeleteSectionAccessTableExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void DeleteSectionAccessTable(System.Guid tableId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/DeleteSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/DeleteSectionAccessTableResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/DeleteSectionAccessTable", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/DeleteSectionAccessTableResponse")]
         System.Threading.Tasks.Task DeleteSectionAccessTableAsync(System.Guid tableId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/TriggerEDXTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/TriggerEDXTaskResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/TriggerEDXTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/TriggerEDXTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/TriggerEDXTaskResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/TriggerEDXTaskExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.TriggerEDXTaskResult TriggerEDXTask(System.Guid qdsID, string taskNameOrID, string password, string variableName, System.Collections.Generic.List<string> variableValues);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/TriggerEDXTask", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/TriggerEDXTaskResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/TriggerEDXTask", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/TriggerEDXTaskResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.TriggerEDXTaskResult> TriggerEDXTaskAsync(System.Guid qdsID, string taskNameOrID, string password, string variableName, System.Collections.Generic.List<string> variableValues);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetEDXTaskStatus", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetEDXTaskStatusResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetEDXTaskStatusExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetEDXTaskStatus", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetEDXTaskStatusResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetEDXTaskStatusExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.EDXStatus GetEDXTaskStatus(System.Guid qdsID, System.Guid executionID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetEDXTaskStatus", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetEDXTaskStatusResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetEDXTaskStatus", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetEDXTaskStatusResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.EDXStatus> GetEDXTaskStatusAsync(System.Guid qdsID, System.Guid executionID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RestartQDS", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RestartQDSResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/RestartQDSExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RestartQDS", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RestartQDSResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/RestartQDSExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void RestartQDS(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/RestartQDS", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/RestartQDSResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/RestartQDS", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/RestartQDSResponse")]
         System.Threading.Tasks.Task RestartQDSAsync(System.Guid qdsID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/QDSNeedRestart", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/QDSNeedRestartResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/QDSNeedRestartExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/QDSNeedRestart", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/QDSNeedRestartResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/QDSNeedRestartExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.QDSNeedRestartResponse QDSNeedRestart(qv_user_manager.QMSAPI.QDSNeedRestartRequest request);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/QDSNeedRestart", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/QDSNeedRestartResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/QDSNeedRestart", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/QDSNeedRestartResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.QDSNeedRestartResponse> QDSNeedRestartAsync(qv_user_manager.QMSAPI.QDSNeedRestartRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/CreateSession", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/CreateSessionResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/CreateSessionExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/CreateSession", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/CreateSessionResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/CreateSessionExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         qv_user_manager.QMSAPI.QDSDocumentSession CreateSession(qv_user_manager.QMSAPI.QDSDocumentSessionConfiguration configuration);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/CreateSession", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/CreateSessionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/CreateSession", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/CreateSessionResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.QDSDocumentSession> CreateSessionAsync(qv_user_manager.QMSAPI.QDSDocumentSessionConfiguration configuration);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/CloseSession", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/CloseSessionResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/CloseSessionExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/CloseSession", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/CloseSessionResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/CloseSessionExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void CloseSession(qv_user_manager.QMSAPI.QDSDocumentSession session);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/CloseSession", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/CloseSessionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/CloseSession", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/CloseSessionResponse")]
         System.Threading.Tasks.Task CloseSessionAsync(qv_user_manager.QMSAPI.QDSDocumentSession session);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/AddSelections", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/AddSelectionsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/AddSelectionsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/AddSelections", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/AddSelectionsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/AddSelectionsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.FieldContent> AddSelections(qv_user_manager.QMSAPI.QDSDocumentSession session, System.Collections.Generic.List<qv_user_manager.QMSAPI.FieldContent> fieldContents, bool lockSelection, bool toggleSelect, bool returnSelectedList);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/AddSelections", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/AddSelectionsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/AddSelections", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/AddSelectionsResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.FieldContent>> AddSelectionsAsync(qv_user_manager.QMSAPI.QDSDocumentSession session, System.Collections.Generic.List<qv_user_manager.QMSAPI.FieldContent> fieldContents, bool lockSelection, bool toggleSelect, bool returnSelectedList);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetFieldContentList", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetFieldContentListResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetFieldContentListExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetFieldContentList", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetFieldContentListResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetFieldContentListExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.FieldContent> GetFieldContentList(qv_user_manager.QMSAPI.QDSDocumentSession session, string forFieldName, qv_user_manager.QMSAPI.FieldContentType fieldContentType, int index, int length);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetFieldContentList", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetFieldContentListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetFieldContentList", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetFieldContentListResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.FieldContent>> GetFieldContentListAsync(qv_user_manager.QMSAPI.QDSDocumentSession session, string forFieldName, qv_user_manager.QMSAPI.FieldContentType fieldContentType, int index, int length);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetFieldList", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetFieldListResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetFieldListExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetFieldList", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetFieldListResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetFieldListExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.Field> GetFieldList(qv_user_manager.QMSAPI.QDSDocumentSession session);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetFieldList", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetFieldListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetFieldList", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetFieldListResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.Field>> GetFieldListAsync(qv_user_manager.QMSAPI.QDSDocumentSession session);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentBookmarkNames", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentBookmarkNamesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentBookmarkNamesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentBookmarkNames", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentBookmarkNamesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentBookmarkNamesExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<string> GetDocumentBookmarkNames(qv_user_manager.QMSAPI.QDSDocumentSession session);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentBookmarkNames", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetDocumentBookmarkNamesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentBookmarkNames", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetDocumentBookmarkNamesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetDocumentBookmarkNamesAsync(qv_user_manager.QMSAPI.QDSDocumentSession session);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ClearSelections", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ClearSelectionsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/ClearSelectionsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ClearSelections", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ClearSelectionsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/ClearSelectionsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         void ClearSelections(qv_user_manager.QMSAPI.QDSDocumentSession session, string fieldName, qv_user_manager.QMSAPI.DocumentClearOptions clearOptions);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/ClearSelections", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/ClearSelectionsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/ClearSelections", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/ClearSelectionsResponse")]
         System.Threading.Tasks.Task ClearSelectionsAsync(qv_user_manager.QMSAPI.QDSDocumentSession session, string fieldName, qv_user_manager.QMSAPI.DocumentClearOptions clearOptions);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetReports", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetReportsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/11/IQMS/GetReportsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetReports", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetReportsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://ws.qliktech.com/QMS/12/IQMS/GetReportsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         System.Collections.Generic.List<qv_user_manager.QMSAPI.Report> GetReports(qv_user_manager.QMSAPI.QDSDocumentSession session);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/11/IQMS/GetReports", ReplyAction="http://ws.qliktech.com/QMS/11/IQMS/GetReportsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/QMS/12/IQMS/GetReports", ReplyAction="http://ws.qliktech.com/QMS/12/IQMS/GetReportsResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<qv_user_manager.QMSAPI.Report>> GetReportsAsync(qv_user_manager.QMSAPI.QDSDocumentSession session);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="QVSNeedRestart", WrapperNamespace="http://ws.qliktech.com/QMS/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="QVSNeedRestart", WrapperNamespace="http://ws.qliktech.com/QMS/12/", IsWrapped=true)]
     public partial class QVSNeedRestartRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/11/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/12/", Order=0)]
         public System.Guid qvsID;
         
         public QVSNeedRestartRequest() {
@@ -13566,13 +13566,13 @@ namespace qv_user_manager.QMSAPI {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="QVSNeedRestartResponse", WrapperNamespace="http://ws.qliktech.com/QMS/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="QVSNeedRestartResponse", WrapperNamespace="http://ws.qliktech.com/QMS/12/", IsWrapped=true)]
     public partial class QVSNeedRestartResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/11/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/12/", Order=0)]
         public bool QVSNeedRestartResult;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/11/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/12/", Order=1)]
         public string reason;
         
         public QVSNeedRestartResponse() {
@@ -13586,10 +13586,10 @@ namespace qv_user_manager.QMSAPI {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="QDSNeedRestart", WrapperNamespace="http://ws.qliktech.com/QMS/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="QDSNeedRestart", WrapperNamespace="http://ws.qliktech.com/QMS/12/", IsWrapped=true)]
     public partial class QDSNeedRestartRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/11/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/12/", Order=0)]
         public System.Guid qdsID;
         
         public QDSNeedRestartRequest() {
@@ -13602,13 +13602,13 @@ namespace qv_user_manager.QMSAPI {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="QDSNeedRestartResponse", WrapperNamespace="http://ws.qliktech.com/QMS/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="QDSNeedRestartResponse", WrapperNamespace="http://ws.qliktech.com/QMS/12/", IsWrapped=true)]
     public partial class QDSNeedRestartResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/11/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/12/", Order=0)]
         public bool QDSNeedRestartResult;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/11/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/QMS/12/", Order=1)]
         public string reason;
         
         public QDSNeedRestartResponse() {
@@ -14395,42 +14395,42 @@ namespace qv_user_manager.QMSAPI {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ws.qliktech.com/ANY/11/", ConfigurationName="QMSAPI.IQTService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ws.qliktech.com/ANY/12/", ConfigurationName="QMSAPI.IQTService")]
     public interface IQTService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/11/IQTService/Ping", ReplyAction="http://ws.qliktech.com/ANY/11/IQTService/PingResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(qv_user_manager.QMSAPI.Exception), Action="http://ws.qliktech.com/ANY/11/IQTService/PingExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/12/IQTService/Ping", ReplyAction="http://ws.qliktech.com/ANY/12/IQTService/PingResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(qv_user_manager.QMSAPI.Exception), Action="http://ws.qliktech.com/ANY/12/IQTService/PingExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         qv_user_manager.QMSAPI.ServiceStatuseStatusFlag Ping();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/11/IQTService/Ping", ReplyAction="http://ws.qliktech.com/ANY/11/IQTService/PingResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/12/IQTService/Ping", ReplyAction="http://ws.qliktech.com/ANY/12/IQTService/PingResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.ServiceStatuseStatusFlag> PingAsync();
         
         // CODEGEN: Parameter 'GetKeyResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/11/IQTService/GetKey", ReplyAction="http://ws.qliktech.com/ANY/11/IQTService/GetKeyResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(qv_user_manager.QMSAPI.Exception), Action="http://ws.qliktech.com/ANY/11/IQTService/GetKeyExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/12/IQTService/GetKey", ReplyAction="http://ws.qliktech.com/ANY/12/IQTService/GetKeyResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(qv_user_manager.QMSAPI.Exception), Action="http://ws.qliktech.com/ANY/12/IQTService/GetKeyExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         qv_user_manager.QMSAPI.GetKeyResponse GetKey(qv_user_manager.QMSAPI.GetKeyRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/11/IQTService/GetKey", ReplyAction="http://ws.qliktech.com/ANY/11/IQTService/GetKeyResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/12/IQTService/GetKey", ReplyAction="http://ws.qliktech.com/ANY/12/IQTService/GetKeyResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.GetKeyResponse> GetKeyAsync(qv_user_manager.QMSAPI.GetKeyRequest request);
         
         // CODEGEN: Parameter 'GetTimeLimitedRequestKeyResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/11/IQTService/GetTimeLimitedRequestKey", ReplyAction="http://ws.qliktech.com/ANY/11/IQTService/GetTimeLimitedRequestKeyResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(qv_user_manager.QMSAPI.Exception), Action="http://ws.qliktech.com/ANY/11/IQTService/GetTimeLimitedRequestKeyExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/12/IQTService/GetTimeLimitedRequestKey", ReplyAction="http://ws.qliktech.com/ANY/12/IQTService/GetTimeLimitedRequestKeyResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(qv_user_manager.QMSAPI.Exception), Action="http://ws.qliktech.com/ANY/12/IQTService/GetTimeLimitedRequestKeyExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         qv_user_manager.QMSAPI.GetTimeLimitedRequestKeyResponse GetTimeLimitedRequestKey(qv_user_manager.QMSAPI.GetTimeLimitedRequestKeyRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/11/IQTService/GetTimeLimitedRequestKey", ReplyAction="http://ws.qliktech.com/ANY/11/IQTService/GetTimeLimitedRequestKeyResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/12/IQTService/GetTimeLimitedRequestKey", ReplyAction="http://ws.qliktech.com/ANY/12/IQTService/GetTimeLimitedRequestKeyResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.GetTimeLimitedRequestKeyResponse> GetTimeLimitedRequestKeyAsync(qv_user_manager.QMSAPI.GetTimeLimitedRequestKeyRequest request);
         
         // CODEGEN: Parameter 'GetSystemInformationResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/11/IQTService/GetSystemInformation", ReplyAction="http://ws.qliktech.com/ANY/11/IQTService/GetSystemInformationResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(qv_user_manager.QMSAPI.Exception), Action="http://ws.qliktech.com/ANY/11/IQTService/GetSystemInformationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/12/IQTService/GetSystemInformation", ReplyAction="http://ws.qliktech.com/ANY/12/IQTService/GetSystemInformationResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(qv_user_manager.QMSAPI.Exception), Action="http://ws.qliktech.com/ANY/12/IQTService/GetSystemInformationExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         qv_user_manager.QMSAPI.GetSystemInformationResponse GetSystemInformation(qv_user_manager.QMSAPI.GetSystemInformationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/11/IQTService/GetSystemInformation", ReplyAction="http://ws.qliktech.com/ANY/11/IQTService/GetSystemInformationResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.qliktech.com/ANY/12/IQTService/GetSystemInformation", ReplyAction="http://ws.qliktech.com/ANY/12/IQTService/GetSystemInformationResponse")]
         System.Threading.Tasks.Task<qv_user_manager.QMSAPI.GetSystemInformationResponse> GetSystemInformationAsync(qv_user_manager.QMSAPI.GetSystemInformationRequest request);
     }
     
@@ -14462,7 +14462,7 @@ namespace qv_user_manager.QMSAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetKey", WrapperNamespace="http://ws.qliktech.com/ANY/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetKey", WrapperNamespace="http://ws.qliktech.com/ANY/12/", IsWrapped=true)]
     public partial class GetKeyRequest {
         
         public GetKeyRequest() {
@@ -14472,10 +14472,10 @@ namespace qv_user_manager.QMSAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetKeyResponse", WrapperNamespace="http://ws.qliktech.com/ANY/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetKeyResponse", WrapperNamespace="http://ws.qliktech.com/ANY/12/", IsWrapped=true)]
     public partial class GetKeyResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/ANY/11/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/ANY/12/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string GetKeyResult;
         
@@ -14490,7 +14490,7 @@ namespace qv_user_manager.QMSAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTimeLimitedRequestKey", WrapperNamespace="http://ws.qliktech.com/ANY/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTimeLimitedRequestKey", WrapperNamespace="http://ws.qliktech.com/ANY/12/", IsWrapped=true)]
     public partial class GetTimeLimitedRequestKeyRequest {
         
         public GetTimeLimitedRequestKeyRequest() {
@@ -14500,10 +14500,10 @@ namespace qv_user_manager.QMSAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTimeLimitedRequestKeyResponse", WrapperNamespace="http://ws.qliktech.com/ANY/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTimeLimitedRequestKeyResponse", WrapperNamespace="http://ws.qliktech.com/ANY/12/", IsWrapped=true)]
     public partial class GetTimeLimitedRequestKeyResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/ANY/11/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/ANY/12/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string GetTimeLimitedRequestKeyResult;
         
@@ -14518,7 +14518,7 @@ namespace qv_user_manager.QMSAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetSystemInformation", WrapperNamespace="http://ws.qliktech.com/ANY/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetSystemInformation", WrapperNamespace="http://ws.qliktech.com/ANY/12/", IsWrapped=true)]
     public partial class GetSystemInformationRequest {
         
         public GetSystemInformationRequest() {
@@ -14528,10 +14528,10 @@ namespace qv_user_manager.QMSAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetSystemInformationResponse", WrapperNamespace="http://ws.qliktech.com/ANY/11/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetSystemInformationResponse", WrapperNamespace="http://ws.qliktech.com/ANY/12/", IsWrapped=true)]
     public partial class GetSystemInformationResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/ANY/11/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.qliktech.com/ANY/12/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Data.DataSet GetSystemInformationResult;
         
