@@ -9,15 +9,6 @@ Don't fear the command line! With console redirection and piping support this li
 
 This project aim to both demonstrate and inspire how to work with the QlikView Management Service (QMS) API while at the same time being a useful and fully working example of what can be done.
 
-Download
---------
-
-These are binary packages compiled against QlikView 11 and 12 respectively.
-
-[qv-user-manager for QlikView 11](https://drive.google.com/open?id=0B7XiMwaoOQyuUTQ0OXNvaEFDbFU)
-
-[qv-user-manager for QlikView 12](https://drive.google.com/open?id=0B7XiMwaoOQyuUWN4emdyS0FBd3M)
-
 Help screen
 -----------
 
