@@ -187,7 +187,7 @@ namespace qv_user_manager
         /// <summary>
         /// Remove CALs
         /// </summary>
-        public static void Remove()
+        public static void Remove(ICollection<string> documents, Int32 days, Boolean named)
         {
             try
             {
@@ -200,9 +200,6 @@ namespace qv_user_manager
                 // Get available QlikView Servers
                 var serviceList = backendClient.GetServices(ServiceTypes.QlikViewServer);
 
-                // Number of inactive days
-                const int days = -30;
-
                 // Loop through available servers
                 foreach (var server in serviceList)
                 {
@@ -213,26 +210,29 @@ namespace qv_user_manager
                     // Get CAL configuration
                     var config = backendClient.GetCALConfiguration(server.ID, CALConfigurationScope.NamedCALs);
 
-                    // Get number of users BEFORE modifications
-                    var numberOfUsers = config.NamedCALs.AssignedCALs.Count;
-
-                    // Iterate through all CAL's and remove the inactive ones
-                    foreach (var c in config.NamedCALs.AssignedCALs.ToList().Where(u => u.LastUsed.Year > 0001 && u.LastUsed.CompareTo(DateTime.UtcNow.AddDays(days)) == -1))
+                    if (named)
                     {
-                        config.NamedCALs.AssignedCALs.Remove(c);
-                        config.NamedCALs.RemovedAssignedCALs.Add(c);
+                        // Get number of users BEFORE modifications
+                        var numberOfUsers = config.NamedCALs.AssignedCALs.Count;
+
+                        // Iterate through all CAL's and remove the inactive ones
+                        foreach (var c in config.NamedCALs.AssignedCALs.ToList().Where(u => u.LastUsed.Year > 0001 && u.LastUsed.CompareTo(DateTime.UtcNow.AddDays(days)) == -1))
+                        {
+                            config.NamedCALs.AssignedCALs.Remove(c);
+                            config.NamedCALs.RemovedAssignedCALs.Add(c);
+                        }
+
+                        // Save changes
+                        backendClient.SaveCALConfiguration(config);
+
+                        // Get number of users BEFORE modifications
+                        var removedUsers = numberOfUsers - config.NamedCALs.AssignedCALs.Count;
+
+                        if (removedUsers <= 0)
+                            Console.WriteLine(String.Format("No Named CALs to remove on {0}", server.Name));
+                        else
+                            Console.WriteLine(String.Format("Removed Named {0} CALs on {1}", removedUsers, server.Name));
                     }
-
-                    // Save changes
-                    backendClient.SaveCALConfiguration(config);
-
-                    // Get number of users BEFORE modifications
-                    var removedUsers = numberOfUsers - config.NamedCALs.AssignedCALs.Count;
-
-                    if (removedUsers <= 0)
-                        Console.WriteLine(String.Format("No CALs to remove on {0}", server.Name));
-                    else
-                        Console.WriteLine(String.Format("Removed {0} CALs on {1}", removedUsers, server.Name));
 
                     /**********************
                      *   DOCUMENT CALS
@@ -240,24 +240,30 @@ namespace qv_user_manager
 
                     // Get Document CAL's
                     var userDocuments = backendClient.GetUserDocuments(server.ID);
-
+                    
                     foreach (var docNode in userDocuments)
                     {
+                        // Continue if no matching documents
+                        if (documents.Count !=0 && !documents.Contains(docNode.Name.ToLower())) continue;
+
                         // Get licensing meta data
                         var metaData = backendClient.GetDocumentMetaData(docNode, DocumentMetaDataScope.Licensing);
 
                         // Get number of users BEFORE modifications
-                        numberOfUsers = metaData.Licensing.AssignedCALs.Count;
+                        var numberOfUsers = metaData.Licensing.AssignedCALs.Count;
 
                         // Iterate through all CAL's and remove the inactive ones
                         foreach (var c in metaData.Licensing.AssignedCALs.ToList().Where(u => u.LastUsed.Year > 0001 && u.LastUsed.CompareTo(DateTime.UtcNow.AddDays(days)) == -1))
+                        {
                             metaData.Licensing.AssignedCALs.Remove(c);
+                            metaData.Licensing.RemovedAssignedCALs.Add(c);
+                        }
 
                         // Save changes
                         backendClient.SaveDocumentMetaData(metaData);
 
                         // Get number of users AFTER modifications
-                        removedUsers = numberOfUsers - metaData.Licensing.AssignedCALs.Count;
+                        var removedUsers = numberOfUsers - metaData.Licensing.AssignedCALs.Count;
 
                         if (removedUsers <= 0)
                             Console.WriteLine(String.Format("No Document CALs to remove from '{0}' on {1}", docNode.Name, server.Name));

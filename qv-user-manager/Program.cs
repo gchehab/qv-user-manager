@@ -44,8 +44,10 @@ namespace qv_user_manager
             var remove = "";
             var docs = "";
             var prefix = "";
+            var named = false;
             var version = false;
             var help = false;
+            var days = 30;
 
             try
             {
@@ -54,6 +56,8 @@ namespace qv_user_manager
                     { "a|add=", "Add users or assign CALs [{CAL|DMS}]", v => add = v.ToLower() },
                     { "r|remove=", "Remove specified users or inactive CALs [{CAL|DMS}]", v => remove = v.ToLower() },
                     { "d|document=", "QlikView document(s) to perform actions on", v => docs = v.ToLower() },
+                    { "t|days=", "Remove user CALs after how many days of inactivity (default=30)", v => days = Int32.Parse(v)},
+                    { "n|named", "Remove inactive named CALs (default=false)", v => named = v!=null },
                     { "p|prefix=", "Use specified prefix for all users and CALs", v => prefix = v },
                     { "V|version", "Show version information", v => version = v != null },
                     { "?|h|help", "Show usage information", v => help = v != null },
@@ -123,7 +127,7 @@ namespace qv_user_manager
                     DocumentMetadataService.Remove(documents, users);
                     break;
                 case "cal":
-                    ClientAccessLicenses.Remove();
+                    ClientAccessLicenses.Remove(documents, days, named);
                     break;
             }
 
